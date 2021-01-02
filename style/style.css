@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  padding: 30px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-image: url("../images/pattern-bg.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.container p {
+  margin-left: 25px;
+  font-size: 32px;
+  position: relative;
+  top: 0;
+  left: 90px;
+  background-image: url("../images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: 100px 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .name {
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  left: 100px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .job {
+  font-weight: 300;
+  position: relative;
+  top: 0;
+  left: 100px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 75%;
+}
+
+.container .pointers {
+  padding: 20px;
+  background-color: #eee;
+  width: 60px;
+  border-radius: 10px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  left: 70%;
+  top: 85%;
+}
+
+.container .pointers img:hover {
+  cursor: pointer;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 80px;
+}
+/*# sourceMappingURL=style.css.map */
