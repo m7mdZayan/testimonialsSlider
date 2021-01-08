@@ -1,39 +1,25 @@
-import { data, photos } from "./data.js";
+import { data, photos } from "./model/data.js";
+import * as elements from "./model/domElements.js";
+import { showData } from "./view/showData.js";
 
 window.addEventListener("load", () => {
-  const textBox = document.querySelector(".text p");
-  const nextButton = document.querySelector(".next");
-  const prevButton = document.querySelector(".prev");
-  const image = document.querySelector(".person");
-  const nameSpan = document.querySelector(".name");
-  const jobSpan = document.querySelector(".job");
+  let currentNumber = 0;
 
-  let currentNUmber = 0;
+  showData(currentNumber);
 
-  textBox.textContent = data[currentNUmber].quaote;
-  image.src = photos[currentNUmber];
-  nameSpan.textContent = data[currentNUmber].name;
-  jobSpan.textContent = data[currentNUmber].job;
-
-  nextButton.addEventListener("click", () => {
-    if (currentNUmber < data.length - 1) currentNUmber++;
+  elements.nextButton.addEventListener("click", () => {
+    if (currentNumber < data.length - 1) currentNumber++;
     else {
-      if (currentNUmber === data.length - 1) currentNUmber = 0;
+      if (currentNumber === data.length - 1) currentNumber = 0;
     }
-    textBox.textContent = data[currentNUmber].quaote;
-    image.src = photos[currentNUmber];
-    nameSpan.textContent = data[currentNUmber].name;
-    jobSpan.textContent = data[currentNUmber].job;
+    showData(currentNumber);
   });
 
-  prevButton.addEventListener("click", () => {
-    if (currentNUmber > 0) currentNUmber--;
+  elements.prevButton.addEventListener("click", () => {
+    if (currentNumber > 0) currentNumber--;
     else {
-      if (currentNUmber === 0) currentNUmber = data.length - 1;
+      if (currentNumber === 0) currentNumber = data.length - 1;
     }
-    textBox.textContent = data[currentNUmber].quaote;
-    image.src = photos[currentNUmber];
-    nameSpan.textContent = data[currentNUmber].name;
-    jobSpan.textContent = data[currentNUmber].job;
+    showData(currentNumber);
   });
 });
